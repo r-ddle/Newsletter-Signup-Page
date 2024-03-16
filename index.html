@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
+  <style>
+    * {
+      font-family: 'Roboto';
+    }
+    .custom-bg {
+      background-color: hsl(235, 18%, 26%);
+    }
+    .card-bg {
+      background-color: hsl(0, 0%, 100%);
+    }
+    .button-bg {
+      background: hsl(4, 100%, 67%);
+    }
+    .text-color {
+      color: hsl(234, 29%, 20%);
+    }
+  </style>
+  <body
+    class="grid justify-items-center font-family-['Roboto'] custom-bg text-color min-h-full p-[20px] xl:p-[150px] max-[375px]:flex-col max-[375px]:p-0"
+  >
+    <!-- wrapper container -->
+    <div
+      id="cardContainer"
+      class="flex justify-center items-center card-bg rounded-[30px] pl-8 h-[640px] w-[990px] mt-auto mb-auto max-[375px]:flex-col max-[375px]:h-full max-[375px]:p-0 max-[375px]:w-full max-[375px]:rounded-none max-[375px]:pl-0"
+    >
+      <div class="hidden max-[375px]:block max-[375px]:">
+        <img
+          class=""
+          src="assets/images/illustration-sign-up-mobile.svg"
+          alt=""
+        />
+      </div>
+      <!-- Description side -->
+      <div class="mr-[30px] max-[375px]:mr-0 max-[375px]:mt-6 max-[375px]:p-6">
+        <!-- header text -->
+        <h1 class="font-bold text-6xl mb-8 lh-8 max-[375px]:text-5xl">
+          Stay updated!
+        </h1>
+        <p class="text-[16px] mb-6">
+          Join 60,000+ product managers receiving monthgly <br />
+          updates on:
+        </p>
+        <!-- product points -->
+        <ul class="mt-4 mb-10 max-[375px]:mb-[20px]">
+          <p class="mb-3 max-[375px]:">
+            <img
+              class="inline-flex mr-3"
+              src="assets/images/icon-list.svg"
+              alt=""
+            />
+            Product discovery and building what matters
+          </p>
+          <p class="mb-3">
+            <img
+              class="inline-flex mr-3"
+              src="assets/images/icon-list.svg"
+              alt=""
+            />
+            Measuring to ensure updates are a success
+          </p>
+          <p class="mb-3">
+            <img
+              class="inline-flex mr-3"
+              src="assets/images/icon-list.svg"
+              alt=""
+            />
+            And much more!
+          </p>
+        </ul>
+        <!-- email input area -->
+        <div class="flex flex-col">
+          <p class="font-semibold mb-2">Email address</p>
+          <input
+            class="peer rounded-md border-solid border border-gray-700 p-2 px-10 py-3 max-[375px]:border-gray-200"
+            type="email"
+            title="enter your email here"
+            placeholder="email@company.com"
+            id="emailInput"
+            required
+          />
+          <button
+            onclick="renderPopUp()"
+            id="subscribe-btn"
+            class="text-center text-white custom-bg hover:bg-red-500 px-10 py-3 rounded-lg mt-6 max-[375px]:mb-[10px]"
+          >
+            Subscribe to monthly newsletter
+          </button>
+        </div>
+      </div>
+      <!-- Image side -->
+      <div class="ml-[100px] block max-[375px]:hidden">
+        <img
+          class=""
+          src="assets/images/illustration-sign-up-desktop.svg"
+          alt=""
+        />
+      </div>
+    </div>
+    <!-- alert popup -->
+    <div
+      id="alertContainer"
+      class="hidden absolute card-bg p-8 rounded-3xl w-[350px] mt-[150px] mb-auto"
+    >
+      <img
+        src="assets/images/icon-success.svg"
+        alt=""
+        class="h-[50px] w-[50px]"
+      />
+      <h1 class="font-bold text-4xl mb-6 mt-4 lh-8">Thanks for subscribing!</h1>
+      <p id="emailContent"></p>
+      <p>
+        Please open it and click the button inside to confirm your subscription
+      </p>
+      <button
+        id="dismiss-btn"
+        class="text-center text-white custom-bg hover:bg-red-500 px-10 py-3 rounded-lg mt-6 w-full"
+        onclick="removePopUp()"
+      >
+        Dismiss Message
+      </button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
